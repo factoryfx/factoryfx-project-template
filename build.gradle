@@ -1,0 +1,16 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+dependencies {
+    compile group: 'io.github.factoryfx', name: 'factory', version: '2.0.0'
+    compile group: 'io.github.factoryfx', name: 'jettyFactory', version:'2.0.0'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.3.0-alpha4'
+}
