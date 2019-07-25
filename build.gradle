@@ -3,7 +3,7 @@ apply plugin: 'idea'
 apply plugin: 'application'
 
 
-def factoryFxVersion = '2.0.24'
+def factoryFxVersion = '2.0.25'
 
 
 repositories {
