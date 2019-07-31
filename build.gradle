@@ -1,6 +1,5 @@
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'application'
 
 
 def factoryFxVersion = '2.0.25'
@@ -12,6 +11,16 @@ repositories {
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
+
+compileJava {
+    inputs.property("moduleName", "io.github.factoryfx.$project.name")
+    doFirst {
+        options.compilerArgs = [
+                '--module-path', classpath.asPath,
+        ]
+        classpath = files()
+    }
+}
 
 dependencies {
     compile group: 'io.github.factoryfx', name: 'factory', version: factoryFxVersion
