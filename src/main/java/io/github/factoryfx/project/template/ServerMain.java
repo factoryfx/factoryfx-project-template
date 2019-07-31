@@ -1,8 +1,12 @@
 package io.github.factoryfx.project.template;
 
-import ch.qos.logback.classic.Level;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import ch.qos.logback.classic.Level;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.core.config.Configurator;
+import org.apache.logging.log4j.status.StatusLogger;
 
 import java.io.IOException;
 import java.net.URI;
@@ -15,8 +19,8 @@ import java.net.http.HttpResponse;
  */
 public class ServerMain {
   public static void main(String[] args) {
-    ch.qos.logback.classic.Logger root = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
-    root.setLevel(Level.INFO);
+    StatusLogger.getLogger().setLevel(Level.OFF);
+    Configurator.setRootLevel(Level.INFO);
 
     new ServerBuilder().builder().microservice().build().start();
 
