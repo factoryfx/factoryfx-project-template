@@ -4,6 +4,8 @@ import io.github.factoryfx.factory.FactoryBase;
 import io.github.factoryfx.factory.util.ClasspathBasedFactoryProvider;
 import io.github.factoryfx.factory.validator.FactoryStyleValidation;
 import io.github.factoryfx.factory.validator.FactoryStyleValidatorBuilder;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.status.StatusLogger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
@@ -13,6 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FactoryValidatorTest {
+    static {
+        StatusLogger.getLogger().setLevel(Level.OFF);
+    }
 
     @TestFactory
     List<DynamicTest> factoryValidatingTests() {

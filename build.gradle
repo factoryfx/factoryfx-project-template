@@ -12,6 +12,10 @@ repositories {
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
+test {
+    useJUnitPlatform()
+}
+
 compileJava {
     inputs.property("moduleName", "io.github.factoryfx.$project.name")
     doFirst {
