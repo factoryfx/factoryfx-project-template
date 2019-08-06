@@ -1,6 +1,7 @@
 package io.github.factoryfx.project.template;
 
 import io.github.factoryfx.factory.SimpleFactoryBase;
+import io.github.factoryfx.factory.attribute.dependency.FactoryAttribute;
 import io.github.factoryfx.jetty.JettyServerFactory;
 import java.lang.Override;
 import org.eclipse.jetty.server.Server;
