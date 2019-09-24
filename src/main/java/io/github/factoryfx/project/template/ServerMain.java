@@ -1,9 +1,5 @@
 package io.github.factoryfx.project.template;
 
-//import ch.qos.logback.classic.Level;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.apache.logging.log4j.status.StatusLogger;
