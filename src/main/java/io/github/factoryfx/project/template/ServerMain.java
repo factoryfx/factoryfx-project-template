@@ -14,19 +14,19 @@ import java.net.http.HttpResponse;
  * Application start
  */
 public class ServerMain {
-  public static void main(String[] args) {
-    StatusLogger.getLogger().setLevel(Level.OFF);
-    Configurator.setRootLevel(Level.INFO);
+    public static void main(String[] args) {
+        StatusLogger.getLogger().setLevel(Level.OFF);
+        Configurator.setRootLevel(Level.INFO);
 
-    new ServerBuilder().builder().microservice().build().start();
+        ServerBuilder.build().microservice().build().start();
 
-    HttpClient client = HttpClient.newBuilder().version(HttpClient.Version.HTTP_1_1).build();
-    HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://localhost:8080")).GET().build();
-    try {
-      HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-      System.out.println("Server responded: "+response.body());
-    } catch (IOException | InterruptedException e) {
-      throw new RuntimeException(e);
+        HttpClient client = HttpClient.newBuilder().version(HttpClient.Version.HTTP_1_1).build();
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://localhost:8080")).GET().build();
+        try {
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            System.out.println("Server responded: "+response.body());
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
-  }
 }

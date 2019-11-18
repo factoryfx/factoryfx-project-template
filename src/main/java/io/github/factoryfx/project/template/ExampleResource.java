@@ -9,8 +9,13 @@ import javax.ws.rs.Path;
  */
 @Path("/")
 public class ExampleResource {
-  @GET
-  public String get() {
-    return "Hello World";
-  }
+    private final String text;
+    public ExampleResource(String text) {
+        this.text=text;
+    }
+
+    @GET
+    public String get() {
+        return text;
+    }
 }

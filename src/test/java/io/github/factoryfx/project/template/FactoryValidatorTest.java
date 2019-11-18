@@ -23,7 +23,7 @@ public class FactoryValidatorTest {
     List<DynamicTest> factoryValidatingTests() {
         List<DynamicTest> result = new ArrayList<>();
         final FactoryStyleValidatorBuilder factoryStyleValidatorBuilder = new FactoryStyleValidatorBuilder();
-        for (Class<? extends FactoryBase<?,?>> clazz: new ClasspathBasedFactoryProvider().get(ServerRootFactory.class)){
+        for (Class<? extends FactoryBase<?,?>> clazz: new ClasspathBasedFactoryProvider().get(ExampleResourceFactory.class)){
             if (!Modifier.isAbstract( clazz.getModifiers() )){
                 final List<FactoryStyleValidation> factoryValidations = factoryStyleValidatorBuilder.createFactoryValidations(clazz);
                 for (FactoryStyleValidation factoryStyleValidation: factoryValidations){
