@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'idea'
 
 
-def factoryFxVersion = '2.2.10'
+def factoryFxVersion = '3.0.0-alpha2'
 
 
 repositories {
@@ -14,17 +14,17 @@ test {
 }
 
 compileJava {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_16
+    targetCompatibility = JavaVersion.VERSION_16
 }
 
 dependencies {
-    compile group: 'io.github.factoryfx', name: 'factory', version: factoryFxVersion
-    compile group: 'io.github.factoryfx', name: 'jettyFactory', version: factoryFxVersion
+    implementation group: 'io.github.factoryfx', name: 'factory', version: factoryFxVersion
+    implementation group: 'io.github.factoryfx', name: 'jettyFactory', version: factoryFxVersion
 
-    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.12.1'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j18-impl', version: '2.12.1'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.12.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.12.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j18-impl', version: '2.12.1'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.12.1'
 
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.5.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.5.2'
 }
